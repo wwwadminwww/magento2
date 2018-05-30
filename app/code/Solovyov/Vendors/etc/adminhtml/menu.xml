@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Solovyov_Vendors::vendor_head" title="Vendors" module="Solovyov_Vendors" sortOrder="100" resource="Solovyov_Vendors::vendor_head" />
+        <add id="Solovyov_Vendors::vendor" title="Vendor" sortOrder="10" module="Solovyov_Vendors" parent="Solovyov_Vendors::vendor_head" action="vendors/vendor" resource="Solovyov_Vendors::vendor" />
+    </menu>
+</config>
