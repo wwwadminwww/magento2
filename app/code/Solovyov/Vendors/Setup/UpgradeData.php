@@ -15,20 +15,32 @@ use Solovyov\Vendors\Model\Vendor;
 
 class UpgradeData implements UpgradeDataInterface
 {
+    /**
+     * @var Vendor
+     */
     protected $_vendor;
 
+    /**
+     * UpgradeData constructor.
+     * @param Vendor $vendor
+     */
     public function __construct(Vendor $vendor)
     {
         $this->_vendor = $vendor;
     }
 
+    /**
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface $context
+     * @throws \Exception
+     */
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
 
-        if (version_compare($context->getVersion(), '1.0.0.1') < 0){
+        if (version_compare($context->getVersion(), '1.0.0.1') < 0) {
             $vendors = [
-            ['name' => 'Adidas'],
+                ['name' => 'Adidas'],
                 ['name' => 'Nike'],
                 ['name' => 'Puma'],
                 ['name' => 'Reebok'],
@@ -36,7 +48,7 @@ class UpgradeData implements UpgradeDataInterface
             ];
 
             $vendorsIds = [];
-            foreach ($vendors as $data){
+            foreach ($vendors as $data) {
                 $vendor = $this->_vendor->setData($data)->save();
                 $vendorsIds[] = $vendor->getId();
             }
