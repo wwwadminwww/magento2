@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<body>
+    <referenceContainer name="product.info.stock.sku">
+        <block class="Solovyov\Vendors\Block\Product\View\Vendor"
+               name="product.view.vendor"
+               template="Solovyov_Vendors::product/view/vendor.phtml"
+               after="-">
+        </block>
+    </referenceContainer>
+</body>
